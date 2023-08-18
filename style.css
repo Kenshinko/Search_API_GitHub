@@ -1,0 +1,206 @@
+* {
+  font-size: 24px;
+}
+
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Пишем свои стили */
+.app {
+  height: 100vh;
+
+  background-color: #C4C4C4;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.app_inner {
+  height: 768px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+}
+
+.search-form_input {
+  max-width: 500px;
+  height: 60px;
+  padding: 0 15px;
+  font-size: 2em;
+  border: none;
+
+  align-self: center;
+}
+
+.search-form_suggestions {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, 0%);
+}
+
+
+.search-form_suggestions :first-child {
+  border-top: 3px solid #000;
+}
+
+.search-form_suggestions li {
+  width: 100%;
+  height: 44px;
+  font-size: 1.25em;
+  padding-left: 15px;
+  background-color: #E3E3E3;
+  border: 2px solid #000;
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+}
+
+.search-form_suggestions li:hover {
+  background-color: #65CDF9;
+}
+
+.search-list {
+  flex: 1 1 auto;
+  row-gap: 15px;
+
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+.repository-card {
+  width: 100%;
+  height: 100px;
+  padding: 8px 16px;
+  line-height: normal;
+
+  background-color: #E27BEB;
+  border: 1px solid black;
+
+  position: relative;
+}
+
+.card-btn {
+  width: 40px;
+  height: 40px;
+
+  bottom: 50%;
+  right: 9%;
+  transform: translate(50%, 50%);
+
+  position: absolute;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.card-btn:before {
+  content: '';
+  width: 4px;
+  height: 45px;
+  background: #F00;
+
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%) rotate(45deg);
+
+  display: block;
+  position: absolute;
+}
+
+.card-btn:after {
+  content: '';
+  width: 4px;
+  height: 45px;
+  background: #F00;
+
+  bottom: 50%;
+  right: 50%;
+  transform: translate(50%, 50%) rotate(135deg);;
+
+  display: block;
+  position: absolute;
+}
